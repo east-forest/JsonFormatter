@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Formatter</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>JSON Formatter</h1>
+    </header>
+
+    <section class="editor" aria-label="JSON入力・出力">
+      <div class="editor__panel">
+        <label class="editor__label" for="json-input">Input</label>
+        <textarea id="json-input" class="editor__textarea" placeholder="ここにJSONを入力してください" spellcheck="false" aria-describedby="message"></textarea>
+      </div>
+
+      <div class="editor__panel">
+        <label class="editor__label" for="json-output">Output</label>
+        <textarea id="json-output" class="editor__textarea editor__textarea--output" placeholder="整形結果がここに表示されます" readonly spellcheck="false"></textarea>
+      </div>
+    </section>
+
+    <section class="actions" aria-label="操作">
+      <button id="format-button" class="button button--primary" type="button" disabled>
+        Format
+      </button>
+      <button id="copy-button" class="button" type="button" disabled>
+        Copy
+      </button>
+      <button id="clear-button" class="button" type="button">
+        Clear
+      </button>
+    </section>
+
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>

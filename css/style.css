@@ -1,0 +1,132 @@
+/* ベース設定 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 32px 20px;
+  background: #f5f7fa;
+  color: #202833;
+  font-family: Arial, "Noto Sans JP", sans-serif;
+}
+
+.app {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+.app__header {
+  margin-bottom: 24px;
+}
+
+.app__header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* 入力欄・出力欄 */
+.editor {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.editor__panel {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.editor__label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.editor__textarea {
+  width: 100%;
+  min-height: 420px;
+  padding: 14px;
+  resize: vertical;
+  border: 1px solid #c7d0da;
+  border-radius: 8px;
+  background: #fff;
+  color: inherit;
+  font: 14px/1.6 Consolas, "Courier New", monospace;
+}
+
+.editor__textarea:focus {
+  outline: 2px solid #2784b8;
+  outline-offset: 1px;
+}
+
+.editor__textarea--output {
+  background: #edf1f5;
+}
+
+/* ボタン */
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.button {
+  min-width: 112px;
+  padding: 10px 20px;
+  border: 1px solid #176487;
+  border-radius: 6px;
+  background: #fff;
+  color: #176487;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button--primary {
+  background: #176487;
+  color: #fff;
+}
+
+.button:disabled {
+  border-color: #c5cbd1;
+  background: #e2e6ea;
+  color: #89929b;
+  cursor: not-allowed;
+}
+
+/* メッセージ */
+.message {
+  min-height: 24px;
+  margin: 18px 0 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.message--success {
+  color: #16803c;
+}
+
+.message--error {
+  color: #c62828;
+}
+
+/* 狭い画面では縦並び */
+@media (max-width: 700px) {
+  body {
+    padding: 24px 14px;
+  }
+
+  .editor {
+    grid-template-columns: 1fr;
+  }
+
+  .editor__textarea {
+    min-height: 260px;
+  }
+}
