@@ -6,6 +6,7 @@
   const outputElement = document.getElementById('json-output');
   const messageElement = document.getElementById('message');
   const copyButton = document.getElementById('copy-button');
+  const clearButton = document.getElementById('clear-button');
 
   // Formatボタンの活性・非活性
   inputElement.addEventListener('input', () => {
@@ -21,7 +22,7 @@
     messageElement.textContent = message;
   }
 
-  // Formatボタン押下時（JSON検証・整形）
+  // F-001,F-002: Formatボタン押下時（JSON検証・整形）
   formatButton.addEventListener('click', () => {
     try {
       const inputValue = inputElement.value;
@@ -62,7 +63,7 @@
     }
   }
 
-  // Copyボタン押下時
+  // F-003: Copyボタン押下時
   copyButton.addEventListener('click', () => {
     // 整形結果を取得する
     const outputJson = outputElement.value;
@@ -70,4 +71,15 @@
     copyToClipboard(outputJson);
   });
 
+  // F-004: Clearボタン押下時
+  clearButton.addEventListener('click', () => {
+    // 入力欄・出力欄・メッセージ欄をクリアする
+    inputElement.value = '';
+    outputElement.value = '';
+    messageElement.textContent = '';
+
+    // ボタンの活性・非活性をリセットする
+    formatButton.disabled = true;
+    copyButton.disabled = true;
+  });
 })();
