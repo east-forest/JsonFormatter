@@ -89,7 +89,13 @@ body {
 }
 
 .button--primary {
-  background: #176487;
+  background: #87cefa;
+  color: #fff;
+}
+
+.button--copy {
+  background: #98fb98;
+  border: 1px solid #008000;
   color: #fff;
 }
 
